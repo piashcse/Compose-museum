@@ -22,4 +22,5 @@ sealed class Screen(
     object ImageSlider : Screen("image_slider")
     object TabView : Screen("tab_view")
     object ExpandableList : Screen("expandable_list")
+    object ImagePicker : Screen("image_picker")
 }

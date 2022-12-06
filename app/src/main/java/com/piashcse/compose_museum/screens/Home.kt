@@ -25,7 +25,12 @@ fun Home(navController: NavHostController){
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ExpandableList.route)
         }) {
-            Text("Expandable list")
+            Text("Expandable List")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.ImageSlider.route)
+        }) {
+            Text("Image Picker")
         }
     }
 }

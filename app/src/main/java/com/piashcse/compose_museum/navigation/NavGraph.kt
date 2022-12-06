@@ -5,10 +5,7 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.piashcse.compose_museum.screens.ExpandableList
-import com.piashcse.compose_museum.screens.Home
-import com.piashcse.compose_museum.screens.ImageSlider
-import com.piashcse.compose_museum.screens.TabScreen
+import com.piashcse.compose_museum.screens.*
 
 @Composable
 fun Navigation(
@@ -26,6 +23,9 @@ fun Navigation(
         }
         composable(Screen.ExpandableList.route) {
             ExpandableList( navController = navController)
+        }
+        composable(Screen.ImageSlider.route) {
+            ImagePicker( navController = navController)
         }
     }
 }
