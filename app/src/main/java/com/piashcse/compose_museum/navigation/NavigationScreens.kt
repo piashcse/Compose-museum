@@ -20,5 +20,6 @@ sealed class Screen(
 ) {
     object Home : Screen("home")
     object ImageSlider : Screen("image_slider")
+    object TabView : Screen("tab_view")
     object ExpandableList : Screen("expandable_list")
 }

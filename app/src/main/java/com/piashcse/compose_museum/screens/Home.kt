@@ -18,6 +18,11 @@ fun Home(navController: NavHostController){
             Text("Image Slider")
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.TabView.route)
+        }) {
+            Text("Tav View")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ExpandableList.route)
         }) {
             Text("Expandable list")

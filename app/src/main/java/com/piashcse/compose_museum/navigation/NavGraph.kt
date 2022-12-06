@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import com.piashcse.compose_museum.screens.ExpandableList
 import com.piashcse.compose_museum.screens.Home
 import com.piashcse.compose_museum.screens.ImageSlider
+import com.piashcse.compose_museum.screens.TabScreen
 
 @Composable
 fun Navigation(
@@ -19,6 +20,9 @@ fun Navigation(
         }
         composable(Screen.ImageSlider.route) {
             ImageSlider( navController = navController)
+        }
+        composable(Screen.TabView.route) {
+            TabScreen( navController = navController)
         }
         composable(Screen.ExpandableList.route) {
             ExpandableList( navController = navController)
