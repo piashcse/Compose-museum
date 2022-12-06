@@ -10,6 +10,7 @@ Name | Demo
 [ImageSlider](https://github.com/piashcse/compose-museum/blob/master/app/src/main/java/com/piashcse/compose_museum/screens/ImageSlider.kt) | <img src="https://github.com/piashcse/compose-museum/blob/master/screenshots/gif/slider.gif" width="30%" height="50%"> 
 [TabView](https://github.com/piashcse/compose-museum/blob/master/app/src/main/java/com/piashcse/compose_museum/screens/TabScreen.kt) | <img src="https://github.com/piashcse/compose-museum/blob/master/screenshots/gif/tabview.gif" width="30%" height="50%"> 
 [ExpandableList](https://github.com/piashcse/compose-museum/blob/master/app/src/main/java/com/piashcse/compose_museum/screens/ExpandaleList.kt) | <img src="https://github.com/piashcse/compose-museum/blob/master/screenshots/gif/expandable.gif" width="30%" height="50%"> 
+[ImagePicker](https://github.com/piashcse/compose-museum/blob/master/app/src/main/java/com/piashcse/compose_museum/screens/ImagePicker.kt) | <img src="https://github.com/piashcse/compose-museum/blob/master/screenshots/gif/imagepicker.gif" width="30%" height="50%"> 
 
 ## 👨 Developed By
 
