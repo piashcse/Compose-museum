@@ -23,4 +23,5 @@ sealed class Screen(
     object TabView : Screen("tab_view")
     object ExpandableList : Screen("expandable_list")
     object ImagePicker : Screen("image_picker")
+    object BottomSheet : Screen("bottom_sheet")
 }

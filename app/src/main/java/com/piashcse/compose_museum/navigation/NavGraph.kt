@@ -1,5 +1,7 @@
 package com.piashcse.compose_museum.navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -7,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.piashcse.compose_museum.screens.*
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 fun Navigation(
     navController: NavHostController, modifier: Modifier, initialScreen: String
@@ -26,6 +29,9 @@ fun Navigation(
         }
         composable(Screen.ImageSlider.route) {
             ImagePicker( navController = navController)
+        }
+        composable(Screen.BottomSheet.route) {
+            BottomSheetScreen( navController = navController)
         }
     }
 }

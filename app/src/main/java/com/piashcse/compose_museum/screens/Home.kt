@@ -32,5 +32,10 @@ fun Home(navController: NavHostController){
         }) {
             Text("Image Picker")
         }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.BottomSheet.route)
+        }) {
+            Text("Bottom sheet")
+        }
     }
 }
