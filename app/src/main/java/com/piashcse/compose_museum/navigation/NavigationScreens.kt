@@ -24,4 +24,6 @@ sealed class Screen(
     object ExpandableList : Screen("expandable_list")
     object ImagePicker : Screen("image_picker")
     object BottomSheet : Screen("bottom_sheet")
+    object DateAndTimePicker : Screen("date_time")
+    object OnBoarding : Screen("on_boarding")
 }

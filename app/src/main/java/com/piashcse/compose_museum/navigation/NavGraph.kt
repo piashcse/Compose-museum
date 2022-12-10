@@ -27,11 +27,17 @@ fun Navigation(
         composable(Screen.ExpandableList.route) {
             ExpandableList( navController = navController)
         }
-        composable(Screen.ImageSlider.route) {
+        composable(Screen.ImagePicker.route) {
             ImagePicker( navController = navController)
         }
         composable(Screen.BottomSheet.route) {
             BottomSheetScreen( navController = navController)
+        }
+        composable(Screen.DateAndTimePicker.route) {
+            DateAndTimePicker( navController = navController)
+        }
+        composable(Screen.OnBoarding.route) {
+            OnBoarding( navController = navController)
         }
     }
 }

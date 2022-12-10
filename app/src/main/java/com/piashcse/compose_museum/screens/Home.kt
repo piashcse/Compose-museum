@@ -28,14 +28,24 @@ fun Home(navController: NavHostController){
             Text("Expandable List")
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
-            navController.navigate(Screen.ImageSlider.route)
+            navController.navigate(Screen.ImagePicker.route)
         }) {
             Text("Image Picker")
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.BottomSheet.route)
         }) {
-            Text("Bottom sheet")
+            Text("Bottom Sheet")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.DateAndTimePicker.route)
+        }) {
+            Text("Date and Time Picker")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.OnBoarding.route)
+        }) {
+            Text("OnBoarding")
         }
     }
 }
