@@ -39,5 +39,8 @@ fun Navigation(
         composable(Screen.OnBoarding.route) {
             OnBoarding( navController = navController)
         }
+        composable(Screen.Parallax.route) {
+            ParallaxEffect( navController = navController)
+        }
     }
 }

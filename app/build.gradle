@@ -88,4 +88,6 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.2.2")
 
     implementation "io.github.vanpra.compose-material-dialogs:datetime:0.8.1-rc"
+
+    implementation "me.onebone:toolbar-compose:2.3.5"
 }

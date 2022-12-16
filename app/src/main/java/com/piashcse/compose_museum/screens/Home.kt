@@ -47,5 +47,10 @@ fun Home(navController: NavHostController){
         }) {
             Text("OnBoarding")
         }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.Parallax.route)
+        }) {
+            Text("Parallax Toolbar")
+        }
     }
 }

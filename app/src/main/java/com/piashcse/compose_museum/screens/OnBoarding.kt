@@ -41,13 +41,11 @@ fun OnBoarding(navController: NavController) {
                 "Shop Awesome Products",
                 "We have products in different categories including Apparels, Electronics, Accessories, Footwear etc."
             ),
-
             OnBoardingData(
                 R.drawable.ic_illustration_delivery,
                 "One Day Delivery",
                 "Our delivery team around the clock to provide you the products fast and securely."
             ),
-
             OnBoardingData(
                 R.drawable.ic_illustration_research,
                 "Amazing Customer Support",

@@ -26,4 +26,5 @@ sealed class Screen(
     object BottomSheet : Screen("bottom_sheet")
     object DateAndTimePicker : Screen("date_time")
     object OnBoarding : Screen("on_boarding")
+    object Parallax : Screen("parallax")
 }
