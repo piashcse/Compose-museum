@@ -38,6 +38,11 @@ fun Home(navController: NavHostController){
             Text("Bottom Sheet")
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.HomeBottomNavScreen.route)
+        }) {
+            Text("Bottom Navigation")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.DateAndTimePicker.route)
         }) {
             Text("Date and Time Picker")

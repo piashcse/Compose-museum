@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">compose-museum</string>
+    <string name="home">Home</string>
+    <string name="popular">Popular</string>
+    <string name="top_rate">Top rated</string>
+    <string name="up_coming">Up coming</string>
 </resources>

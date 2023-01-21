@@ -16,31 +16,43 @@ fun Navigation(
 ) {
     NavHost(navController, startDestination = initialScreen) {
         composable(Screen.Home.route) {
-            Home( navController = navController)
+            Home(navController = navController)
         }
         composable(Screen.ImageSlider.route) {
-            ImageSlider( navController = navController)
+            ImageSlider(navController = navController)
         }
         composable(Screen.TabView.route) {
-            TabScreen( navController = navController)
+            TabScreen(navController = navController)
         }
         composable(Screen.ExpandableList.route) {
-            ExpandableList( navController = navController)
+            ExpandableList(navController = navController)
         }
         composable(Screen.ImagePicker.route) {
-            ImagePicker( navController = navController)
+            ImagePicker(navController = navController)
         }
         composable(Screen.BottomSheet.route) {
-            BottomSheetScreen( navController = navController)
+            BottomSheetScreen(navController = navController)
         }
         composable(Screen.DateAndTimePicker.route) {
-            DateAndTimePicker( navController = navController)
+            DateAndTimePicker(navController = navController)
         }
         composable(Screen.OnBoarding.route) {
-            OnBoarding( navController = navController)
+            OnBoarding(navController = navController)
         }
         composable(Screen.Parallax.route) {
-            ParallaxEffect( navController = navController)
+            ParallaxEffect(navController = navController)
+        }
+        composable(Screen.HomeBottomNavScreen.route) {
+            HomeBottomNavScreen(navController = navController)
+        }
+        composable(Screen.PopularBottomNavScreen.route) {
+            PopularBottomNavScreen(navController = navController)
+        }
+        composable(Screen.TopRatedBottomNavScreen.route) {
+            TopRatedBottomNavScreen(navController = navController)
+        }
+        composable(Screen.UpComingBottomNavScreen.route) {
+            UpComingBottomNavScreen(navController = navController)
         }
     }
 }
