@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/skydoves/TheMovies2.svg?branch=master)](https://travis-ci.org/piashcse/Hilt-MVVM-Compose-Movie)
 <a href="https://github.com/piashcse"><img alt="License" src="https://img.shields.io/static/v1?label=GitHub&message=piashcse&color=C51162"/></a>
 
-Example code of android jetpack compose ui 
+An awesome list of jetpack compose ui with example code.
 
 Name | Demo
 ----  | ----
