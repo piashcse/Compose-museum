@@ -54,5 +54,8 @@ fun Navigation(
         composable(Screen.UpComingBottomNavScreen.route) {
             UpComingBottomNavScreen(navController = navController)
         }
+        composable(Screen.ExpandableText.route) {
+            ExpandableTexView(navController = navController)
+        }
     }
 }

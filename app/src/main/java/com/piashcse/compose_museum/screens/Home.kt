@@ -57,5 +57,10 @@ fun Home(navController: NavHostController){
         }) {
             Text("Parallax Toolbar")
         }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.ExpandableText.route)
+        }) {
+            Text("Expandable TexView")
+        }
     }
 }

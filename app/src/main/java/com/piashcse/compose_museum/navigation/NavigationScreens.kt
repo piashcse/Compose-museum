@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.Timeline
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -37,6 +38,7 @@ sealed class Screen(
     data object DateAndTimePicker : Screen("date_time")
     data object OnBoarding : Screen("on_boarding")
     data object Parallax : Screen("parallax")
+    data object ExpandableText : Screen("expandable_text")
     data object HomeBottomNavScreen : Screen("home_bottom_nav")
     data object PopularBottomNavScreen : Screen("popular_bottom_nav")
     data object TopRatedBottomNavScreen : Screen("top_rated_bottom_nav")
@@ -82,7 +84,15 @@ sealed class Screen(
         )
     })
 }
-
+@Composable
+fun navigationTitle(navController: NavController): String {
+    return when (currentRoute(navController)) {
+        Screen.Home.route -> stringResource(id = R.string.home)
+        else -> {
+            ""
+        }
+    }
+}
 @Composable
 fun currentRoute(navController: NavController): String? {
     val navBackStackEntry by navController.currentBackStackEntryAsState()

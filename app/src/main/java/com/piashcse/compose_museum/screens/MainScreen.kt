@@ -18,10 +18,15 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.piashcse.compose_museum.R
 import com.piashcse.compose_museum.components.ExitAlertDialog
+import com.piashcse.compose_museum.components.appbar.AppBarWithArrow
+import com.piashcse.compose_museum.components.appbar.HomeAppBar
 import com.piashcse.compose_museum.navigation.Navigation
 import com.piashcse.compose_museum.navigation.Screen
 import com.piashcse.compose_museum.navigation.currentRoute
+import com.piashcse.compose_museum.navigation.navigationTitle
+import kotlinx.coroutines.launch
 
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
@@ -29,14 +34,32 @@ fun MainScreen() {
     val navController = rememberNavController()
     val scaffoldState = rememberScaffoldState()
     val openDialog = remember { mutableStateOf(false) }
+    val isAppBarVisible = remember { mutableStateOf(true) }
     val activity = (LocalContext.current as? Activity)
 
     BackHandler(enabled = (currentRoute(navController) == Screen.Home.route)) {
         openDialog.value = true
     }
-    Scaffold(scaffoldState = scaffoldState, bottomBar = {
+    Scaffold(scaffoldState = scaffoldState, topBar = {
         when (currentRoute(navController)) {
-           Screen.HomeBottomNavScreen.route, Screen.PopularBottomNavScreen.route, Screen.TopRatedBottomNavScreen.route, Screen.UpComingBottomNavScreen.route -> {
+            Screen.Home.route -> {
+                if (isAppBarVisible.value) {
+                    HomeAppBar(title = "home", openDrawer = {
+                    }, openFilters = {
+                        isAppBarVisible.value = false
+                    })
+                }
+            }
+
+            else -> {
+                AppBarWithArrow(navigationTitle(navController)) {
+                    navController.popBackStack()
+                }
+            }
+        }
+    }, bottomBar = {
+        when (currentRoute(navController)) {
+            Screen.HomeBottomNavScreen.route, Screen.PopularBottomNavScreen.route, Screen.TopRatedBottomNavScreen.route, Screen.UpComingBottomNavScreen.route -> {
                 BottomNavigationUI(navController)
             }
         }
