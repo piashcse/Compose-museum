@@ -57,5 +57,8 @@ fun Navigation(
         composable(Screen.ExpandableText.route) {
             ExpandableTexView(navController = navController)
         }
+        composable(Screen.CountryList.route) {
+            CountryList()
+        }
     }
 }

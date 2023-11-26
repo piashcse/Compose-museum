@@ -39,6 +39,7 @@ sealed class Screen(
     data object OnBoarding : Screen("on_boarding")
     data object Parallax : Screen("parallax")
     data object ExpandableText : Screen("expandable_text")
+    data object CountryList : Screen("country_list")
     data object HomeBottomNavScreen : Screen("home_bottom_nav")
     data object PopularBottomNavScreen : Screen("popular_bottom_nav")
     data object TopRatedBottomNavScreen : Screen("top_rated_bottom_nav")

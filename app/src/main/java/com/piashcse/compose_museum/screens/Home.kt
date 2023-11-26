@@ -2,16 +2,18 @@ package com.piashcse.compose_museum.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.piashcse.compose_museum.navigation.Screen
 
 @Composable
 fun Home(navController: NavHostController){
-    Column {
+    Column(modifier = Modifier.padding(8.dp)) {
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ImageSlider.route)
         }) {
@@ -61,6 +63,11 @@ fun Home(navController: NavHostController){
             navController.navigate(Screen.ExpandableText.route)
         }) {
             Text("Expandable TexView")
+        }
+        Button(modifier = Modifier.fillMaxWidth(), onClick = {
+            navController.navigate(Screen.CountryList.route)
+        }) {
+            Text("Country List")
         }
     }
 }
