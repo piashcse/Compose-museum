@@ -6,10 +6,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedButton
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -139,7 +139,7 @@ fun Indicator(isSelected: Boolean) {
             .width(width.value)
             .clip(CircleShape)
             .background(
-                if (isSelected) MaterialTheme.colors.primary else Grey300.copy(alpha = 0.5f)
+                if (isSelected) MaterialTheme.colorScheme.primary else Grey300.copy(alpha = 0.5f)
             )
     )
 }

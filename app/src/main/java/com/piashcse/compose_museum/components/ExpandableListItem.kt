@@ -9,10 +9,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Divider
-import androidx.compose.material.Icon
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.Divider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.ArrowDropUp
@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 fun ExpandableListItem() {
     var expanded by remember { mutableStateOf(false) }
     Card(
-        elevation = 4.dp,
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 15.dp, top = 10.dp, end = 15.dp)

@@ -5,9 +5,9 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.Card
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -110,7 +110,7 @@ fun ViewPagerSlider(){
 
                         Text(
                             text = newKids.title,
-                            style = MaterialTheme.typography.h5,
+                            style = MaterialTheme.typography.titleSmall,
                             color = Color.White,
                             fontWeight = FontWeight.Bold
                         )
@@ -129,7 +129,7 @@ fun ViewPagerSlider(){
                         )*/
                         Text(
                             text = newKids.desc,
-                            style = MaterialTheme.typography.body1,
+                            style = MaterialTheme.typography.bodySmall,
                             color = Color.White,
                             fontWeight = FontWeight.Normal,
                             modifier = Modifier.padding(0.dp,8.dp,0.dp,0.dp)

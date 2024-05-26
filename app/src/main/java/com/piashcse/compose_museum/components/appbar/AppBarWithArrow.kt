@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
@@ -51,7 +51,7 @@ fun AppBarWithArrow(
                     .padding(8.dp)
                     .align(Alignment.CenterVertically),
                 text = title ?: "",
-                style = MaterialTheme.typography.h6,
+                style = MaterialTheme.typography.bodySmall,
                 color = Color.White
             )
         }

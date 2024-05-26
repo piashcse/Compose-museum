@@ -1,0 +1,59 @@
+[versions]
+agp = "8.4.1"
+coilCompose = "2.6.0"
+datetime = "0.8.1-rc"
+kotlin = "2.0.0"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.1.5"
+espressoCore = "3.5.1"
+coreSplashscreen = "1.0.1"
+constraintlayoutCompose = "1.0.1"
+lifecycleRuntimeKtx = "2.8.0"
+activityCompose = "1.9.0"
+composeBom = "2024.05.00"
+multidex = "2.0.1"
+navigationCompose = "2.7.7"
+pagingCompose = "3.3.0"
+timber = "5.0.1"
+composeVersin = "1.6.7"
+toolbarCompose = "2.3.5"
+materialIconsExtended = "1.6.7"
+accompanistPager = "0.28.0"
+accompanistPagerIndicators = "0.27.1"
+
+[libraries]
+accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistPager" }
+accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "accompanistPagerIndicators" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+androidx-navigation-runtime-ktx = { module = "androidx.navigation:navigation-runtime-ktx", version.ref = "navigationCompose" }
+coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
+datetime = { module = "io.github.vanpra.compose-material-dialogs:datetime", version.ref = "datetime" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-constraintlayout-compose = { module = "androidx.constraintlayout:constraintlayout-compose", version.ref = "constraintlayoutCompose" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics", version.ref ="composeVersin"}
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref ="composeVersin" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref ="composeVersin" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref ="composeVersin" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" , version.ref ="composeVersin"}
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsExtended" }
+androidx-multidex = { module = "androidx.multidex:multidex", version.ref = "multidex" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-paging-compose = { module = "androidx.paging:paging-compose", version.ref = "pagingCompose" }
+
+timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+toolbar-compose = { module = "me.onebone:toolbar-compose", version.ref = "toolbarCompose" }
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+
