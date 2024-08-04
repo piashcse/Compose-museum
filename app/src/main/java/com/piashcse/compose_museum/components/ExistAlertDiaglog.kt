@@ -10,20 +10,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.piashcse.compose_museum.R
 import com.piashcse.compose_museum.navigation.Screen
 import com.piashcse.compose_museum.navigation.currentRoute
 
 
 @Composable
-fun ExitAlertDialog(navController: NavController, cancel: (isOpen: Boolean) -> Unit,  ok: () -> Unit) {
+fun ExitAlertDialog(
+    navController: NavController, cancel: (isOpen: Boolean) -> Unit, ok: () -> Unit
+) {
     val openDialog = remember { mutableStateOf(true) }
     if (currentRoute(navController = navController) == Screen.Home.route && openDialog.value) {
         AlertDialog(
-            onDismissRequest = {
-            },
+            onDismissRequest = {},
             // below line is use to display title of our dialog
             // box and we are setting text color to white.
             title = {
@@ -37,11 +40,10 @@ fun ExitAlertDialog(navController: NavController, cancel: (isOpen: Boolean) -> U
                 Text(text = stringResource(R.string.do_you_want_to_exit_the_app), fontSize = 16.sp)
             },
             confirmButton = {
-                TextButton(
-                    onClick = {
-                        openDialog.value = false
-                        ok()
-                    }) {
+                TextButton(onClick = {
+                    openDialog.value = false
+                    ok()
+                }) {
                     Text(
                         stringResource(R.string.yes),
                         fontWeight = FontWeight.Bold,
@@ -50,11 +52,10 @@ fun ExitAlertDialog(navController: NavController, cancel: (isOpen: Boolean) -> U
                 }
             },
             dismissButton = {
-                TextButton(
-                    onClick = {
-                        openDialog.value = false
-                        cancel(false)
-                    }) {
+                TextButton(onClick = {
+                    openDialog.value = false
+                    cancel(false)
+                }) {
                     Text(
                         stringResource(R.string.no),
                         fontWeight = FontWeight.Bold,
@@ -64,4 +65,11 @@ fun ExitAlertDialog(navController: NavController, cancel: (isOpen: Boolean) -> U
             },
         )
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ExitAlertDialogPreview() {
+    val navController = rememberNavController()
+    ExitAlertDialog(navController, {}, {})
 }

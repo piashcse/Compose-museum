@@ -1,71 +1,83 @@
 package com.piashcse.compose_museum.screens
 
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountBox
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
+import androidx.compose.material3.Tab
+import androidx.compose.material3.TabRow
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
-import com.google.accompanist.pager.*
+import androidx.navigation.compose.rememberNavController
+
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun TabScreen(navController: NavController) {
-    val tabData = listOf(
-        "MUSIC" to Icons.Filled.Home,
-        "MARKET" to Icons.Filled.ShoppingCart,
-        "FILMS" to Icons.Filled.AccountBox,
-        "BOOKS" to Icons.Filled.Settings,
-    )
-    val pagerState = rememberPagerState(
-        initialPage = 1,
-    )
-    val tabIndex = pagerState.currentPage
+    val pagerState = rememberPagerState{
+        3
+    }
     val coroutineScope = rememberCoroutineScope()
+    val tabs = listOf("Tab 1", "Tab 2", "Tab 3")
+
     Column {
+        // TabRow
         TabRow(
-            selectedTabIndex = tabIndex,
-            indicator = { tabPositions ->
-                TabRowDefaults.Indicator(
-                    Modifier.pagerTabIndicatorOffset(pagerState, tabPositions)
-                )
-            }
+            selectedTabIndex = pagerState.currentPage,
         ) {
-            tabData.forEachIndexed { index, pair ->
-                Tab(selected = tabIndex == index, onClick = {
-                    coroutineScope.launch {
-                        pagerState.animateScrollToPage(index)
-                    }
-                }, text = {
-                    Text(text = pair.first)
-                }, icon = {
-                    Icon(imageVector = pair.second, contentDescription = null)
-                })
+            tabs.forEachIndexed { index, title ->
+                Tab(
+                    selected = pagerState.currentPage == index,
+                    onClick = {
+                        coroutineScope.launch {
+                            pagerState.animateScrollToPage(index)
+                        }
+                    },
+                    text = { Text(title) }
+                )
             }
         }
+        // HorizontalPager
         HorizontalPager(
             state = pagerState,
-            modifier = Modifier.weight(1f),
-            count = tabData.size
-        ) { index ->
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    text = tabData[index].first,
-                )
+            modifier = Modifier.fillMaxSize()
+        ) { page ->
+            when (page) {
+                0 -> FirstTabContent()
+                1 -> SecondTabContent()
+                2 -> ThirdTabContent()
             }
         }
     }
+}
+
+@Composable
+fun FirstTabContent() {
+    // Content for the first tab
+    Text(text = "First Tab Content")
+}
+
+@Composable
+fun SecondTabContent() {
+    // Content for the second tab
+    Text(text = "Second Tab Content")
+}
+
+@Composable
+fun ThirdTabContent() {
+    // Content for the third tab
+    Text(text = "Third Tab Content")
+}
+
+@Preview(showBackground = true)
+@Composable
+fun TabScreenPreview() {
+    val navController = rememberNavController()
+    TabScreen(navController)
 }

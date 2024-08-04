@@ -8,10 +8,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vanpra.composematerialdialogs.MaterialDialog
 import com.vanpra.composematerialdialogs.datetime.date.datepicker
 import com.vanpra.composematerialdialogs.datetime.time.timepicker
@@ -39,7 +45,7 @@ fun DateAndTimePicker(navController: NavController) {
         positiveButton("Ok")
         negativeButton("Cancel")
     }) {
-        timepicker { selectedTime->
+        timepicker { selectedTime ->
             // Do stuff with java.time.LocalDate object which is passed in
             time = "${selectedTime.minute} : ${selectedTime.hour}"
         }
@@ -59,5 +65,12 @@ fun DateAndTimePicker(navController: NavController) {
         Text(modifier = Modifier.fillMaxWidth(), text = "Selected Date: $date")
         Text(modifier = Modifier.fillMaxWidth(), text = "Selected Time: $time")
     }
+}
 
+@RequiresApi(Build.VERSION_CODES.O)
+@Preview(showBackground = true)
+@Composable
+fun DateAndTimePickerPreview() {
+    val navController = rememberNavController()
+    DateAndTimePicker(navController)
 }

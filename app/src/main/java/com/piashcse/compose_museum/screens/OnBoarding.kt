@@ -1,9 +1,21 @@
 package com.piashcse.compose_museum.screens
 
 import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.PagerState
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -18,22 +30,23 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.google.accompanist.pager.ExperimentalPagerApi
-import com.google.accompanist.pager.HorizontalPager
-import com.google.accompanist.pager.PagerState
-import com.google.accompanist.pager.rememberPagerState
+import androidx.navigation.compose.rememberNavController
+import com.piashcse.compose_museum.R
 import com.piashcse.compose_museum.ui.theme.Grey300
 import com.piashcse.compose_museum.ui.theme.Grey900
 import com.piashcse.compose_museum.ui.theme.Typography
-import com.piashcse.compose_museum.R
 
-@OptIn(ExperimentalPagerApi::class)
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoarding(navController: NavController) {
-    val pagerState = rememberPagerState()
+    val pagerState = rememberPagerState{
+        3
+    }
+
     Surface(modifier = Modifier.fillMaxSize()) {
         val items = arrayListOf<OnBoardingData>(
             OnBoardingData(
@@ -63,8 +76,7 @@ fun OnBoarding(navController: NavController) {
 
     }
 }
-
-@ExperimentalPagerApi
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun OnBoardingPager(
     item: List<OnBoardingData>,
@@ -73,7 +85,7 @@ fun OnBoardingPager(
 ) {
     Box(modifier = modifier) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            HorizontalPager(state = pagerState, count = item.size) { page ->
+            HorizontalPager(state = pagerState) { page ->
                 Column(
                     modifier = Modifier
                         .padding(top = 60.dp)
@@ -93,14 +105,14 @@ fun OnBoardingPager(
                         text = item[page].title,
                         modifier = Modifier.padding(top = 50.dp),
                         color = Color.White,
-                        style = Typography.body1
+                        style = Typography.bodySmall
                     )
 
                     Text(
                         text = item[page].desc,
                         modifier = Modifier.padding(top = 30.dp, start = 20.dp, end = 20.dp),
                         color = Color.White,
-                        style = Typography.body1,
+                        style = Typography.bodySmall,
                         fontSize = 18.sp,
                         textAlign = TextAlign.Center
                     )
@@ -130,7 +142,7 @@ fun PagerIndicator(size: Int, currentPage: Int) {
 
 @Composable
 fun Indicator(isSelected: Boolean) {
-    val width = animateDpAsState(targetValue = if (isSelected) 25.dp else 10.dp)
+    val width = animateDpAsState(targetValue = if (isSelected) 25.dp else 10.dp, label = "")
 
     Box(
         modifier = Modifier
@@ -179,7 +191,7 @@ fun SkipNextButton(text: String, modifier: Modifier) {
         color = Grey300,
         modifier = modifier,
         fontSize = 18.sp,
-        style = Typography.body1,
+        style = Typography.bodySmall,
         fontWeight = FontWeight.Medium
     )
 
@@ -188,3 +200,9 @@ fun SkipNextButton(text: String, modifier: Modifier) {
 data class OnBoardingData(
     val image: Int, val title: String, val desc: String
 )
+@Preview(showBackground = true)
+@Composable
+fun OnBoardingPreview(){
+    val navController = rememberNavController()
+    OnBoarding(navController)
+}
