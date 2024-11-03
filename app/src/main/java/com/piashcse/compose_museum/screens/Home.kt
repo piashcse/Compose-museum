@@ -13,7 +13,7 @@ import com.piashcse.compose_museum.navigation.Screen
 
 @Composable
 fun Home(navController: NavHostController){
-    Column(modifier = Modifier.padding(8.dp)) {
+    Column(modifier = Modifier.padding(32.dp)) {
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ImageSlider.route)
         }) {
