@@ -5,6 +5,7 @@ import android.os.Build
 import androidx.activity.compose.BackHandler
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -29,6 +30,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import com.piashcse.compose_museum.R
 import com.piashcse.compose_museum.components.ExitAlertDialog
 import com.piashcse.compose_museum.navigation.Navigation
 import com.piashcse.compose_museum.navigation.Screen
@@ -40,7 +42,6 @@ import com.piashcse.compose_museum.navigation.currentRoute
 fun MainScreen() {
     val navController = rememberNavController()
     val openDialog = remember { mutableStateOf(false) }
-    val isAppBarVisible = remember { mutableStateOf(true) }
     val activity = (LocalContext.current as? Activity)
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
@@ -55,7 +56,7 @@ fun MainScreen() {
             ),
             title = {
                 Text(
-                    "Home",
+                    stringResource(R.string.home),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -67,7 +68,7 @@ fun MainScreen() {
                     }) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "Localized description"
+                            contentDescription = "arrowBack"
                         )
                     }
                 }
@@ -80,10 +81,15 @@ fun MainScreen() {
                 BottomNavigationUI(navController)
             }
         }
-    }) {
-        Column(Modifier.padding(top = 60.dp)){
+    }, content = { paddingValues ->
+        Column(
+            modifier = Modifier
+                .padding(paddingValues) // Apply scaffold's top bar padding
+                .fillMaxSize()
+        ) {
             Navigation(
-                navController = navController, modifier = Modifier.padding(it), Screen.Home.route
+                navController = navController,
+                Screen.Home.route
             )
             if (openDialog.value) {
                 ExitAlertDialog(navController, {
@@ -94,7 +100,7 @@ fun MainScreen() {
 
             }
         }
-    }
+    })
 }
 
 @Composable

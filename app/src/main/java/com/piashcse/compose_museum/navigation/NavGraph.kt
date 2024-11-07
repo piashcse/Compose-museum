@@ -26,7 +26,7 @@ import com.piashcse.compose_museum.screens.UpComingBottomNavScreen
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Composable
 fun Navigation(
-    navController: NavHostController, modifier: Modifier, initialScreen: String
+    navController: NavHostController, initialScreen: String
 ) {
     NavHost(navController, startDestination = initialScreen) {
         composable(Screen.Home.route) {
