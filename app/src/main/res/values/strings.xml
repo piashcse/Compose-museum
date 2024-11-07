@@ -9,4 +9,15 @@
     <string name="close_the_app">Close the app</string>
     <string name="no">No</string>
     <string name="text_android_os">Android is a mobile operating system based on a modified version of the Linux kernel and other open-source software, designed primarily for touchscreen mobile devices such as smartphones and tablets. Android is developed by a consortium of developers known as the Open Handset Alliance, though its most widely used version is primarily developed by Google. It was unveiled in November 2007, with the first commercial Android device, the HTC Dream, being launched in September 2008.</string>
+    <string name="image_slider">Image Slider</string>
+    <string name="tav_view">Tav View</string>
+    <string name="expandable_list">Expandable List</string>
+    <string name="image_picker">Image Picker</string>
+    <string name="bottom_sheet">Bottom Sheet</string>
+    <string name="bottom_navigation">Bottom Navigation</string>
+    <string name="date_and_time_picker">Date and Time Picker</string>
+    <string name="onboarding">OnBoarding</string>
+    <string name="parallax_toolbar">Parallax Toolbar</string>
+    <string name="expandable_texview">Expandable TexView</string>
+    <string name="country_list">Country List</string>
 </resources>

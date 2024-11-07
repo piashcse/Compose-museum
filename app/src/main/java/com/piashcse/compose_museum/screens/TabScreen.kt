@@ -59,19 +59,16 @@ fun TabScreen(navController: NavController) {
 
 @Composable
 fun FirstTabContent() {
-    // Content for the first tab
     Text(text = "First Tab Content")
 }
 
 @Composable
 fun SecondTabContent() {
-    // Content for the second tab
     Text(text = "Second Tab Content")
 }
 
 @Composable
 fun ThirdTabContent() {
-    // Content for the third tab
     Text(text = "Third Tab Content")
 }
 

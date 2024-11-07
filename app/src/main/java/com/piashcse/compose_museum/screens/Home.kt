@@ -7,67 +7,69 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.piashcse.compose_museum.R
 import com.piashcse.compose_museum.navigation.Screen
 
 @Composable
 fun Home(navController: NavHostController){
-    Column(modifier = Modifier.padding(32.dp)) {
+    Column(modifier = Modifier.padding(8.dp)) {
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ImageSlider.route)
         }) {
-            Text("Image Slider")
+            Text(stringResource(R.string.image_slider))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.TabView.route)
         }) {
-            Text("Tav View")
+            Text(stringResource(R.string.tav_view))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ExpandableList.route)
         }) {
-            Text("Expandable List")
+            Text(stringResource(R.string.expandable_list))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ImagePicker.route)
         }) {
-            Text("Image Picker")
+            Text(stringResource(R.string.image_picker))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.BottomSheet.route)
         }) {
-            Text("Bottom Sheet")
+            Text(stringResource(R.string.bottom_sheet))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.HomeBottomNavScreen.route)
         }) {
-            Text("Bottom Navigation")
+            Text(stringResource(R.string.bottom_navigation))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.DateAndTimePicker.route)
         }) {
-            Text("Date and Time Picker")
+            Text(stringResource(R.string.date_and_time_picker))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.OnBoarding.route)
         }) {
-            Text("OnBoarding")
+            Text(stringResource(R.string.onboarding))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.Parallax.route)
         }) {
-            Text("Parallax Toolbar")
+            Text(stringResource(R.string.parallax_toolbar))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.ExpandableText.route)
         }) {
-            Text("Expandable TexView")
+            Text(stringResource(R.string.expandable_texview))
         }
         Button(modifier = Modifier.fillMaxWidth(), onClick = {
             navController.navigate(Screen.CountryList.route)
         }) {
-            Text("Country List")
+            Text(stringResource(R.string.country_list))
         }
     }
 }

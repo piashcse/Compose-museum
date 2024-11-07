@@ -48,10 +48,6 @@ fun ParallaxEffect(navController: NavController) {
             toolbarModifier = Modifier.background(MaterialTheme.colorScheme.primary),
             enabled = enabled,
             toolbar = {
-                // Collapsing toolbar collapses its size as small as the that of
-                // a smallest child. To make the toolbar collapse to 50dp, we create
-                // a dummy Spacer composable.
-                // You may replace it with TopAppBar or other preferred composable.
                 Spacer(
                     modifier = Modifier
                         .fillMaxWidth()
