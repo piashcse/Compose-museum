@@ -3,6 +3,7 @@ package com.piashcse.compose_museum.screens
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -59,8 +60,19 @@ fun BottomSheetScreen(navController: NavController) {
         scaffoldState = scaffoldState,
         sheetContent = {
             Column(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(350.dp)
+                    .background(
+                        brush = Brush.linearGradient(
+                            colors = listOf(
+                                Color(0xFF8E2DE2),
+                                Color(0xFF4A00E0)
+                            )
+                        ),
+                    )
+                    .padding(16.dp),
                 content = {
-                    Spacer(modifier = Modifier.padding(16.dp))
                     Text(
                         text = "Bottom Sheet",
                         modifier = Modifier
@@ -84,7 +96,7 @@ fun BottomSheetScreen(navController: NavController) {
                                     },
                             ) {
                                 Spacer(modifier = Modifier.padding(8.dp))
-                               Icon(
+                                Icon(
                                     bottomSheetItems[it].icon,
                                     bottomSheetItems[it].title,
                                     tint = Color.White
@@ -98,25 +110,11 @@ fun BottomSheetScreen(navController: NavController) {
 
                         })
                     }
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(350.dp)
-                    //.background(Color(0xFF6650a4))
-                    .background(
-                        brush = Brush.linearGradient(
-                            colors = listOf(
-                                Color(0xFF8E2DE2),
-                                Color(0xFF4A00E0)
-                            )
-                        ),
-                        shape = RoundedCornerShape(topStart = 16.dp, topEnd = 10.dp)
-                    )
-                    .padding(16.dp),
-
-                )
+                })
         },
-        sheetPeekHeight = 0.dp
+        sheetShape = RoundedCornerShape(topStart = 16.dp, topEnd = 10.dp), // To round corners of the sheet
+        sheetContainerColor = Color(0xFF8E2DE2),
+        sheetPeekHeight = 0.dp,
     ) { padding ->
         Column(
             modifier = Modifier
