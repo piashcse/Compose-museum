@@ -5,42 +5,43 @@ plugins {
 }
 
 android {
-    namespace 'com.piashcse.compose_museum'
-    compileSdk 35
+    namespace = "com.piashcse.compose_museum"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId "com.piashcse.compose_museum"
-        minSdk 21
-        targetSdk 35
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.piashcse.compose_museum"
+        minSdk = 21
+        targetSdk = 35
+        versionCode = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
-            useSupportLibrary true
+            useSupportLibrary = true
         }
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
+
     kotlinOptions {
-        jvmTarget = '17'
+        jvmTarget = "17"
     }
+
     buildFeatures {
-        compose true
-    }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
-        }
+        compose = true
     }
 }
 
@@ -67,7 +68,7 @@ dependencies {
     implementation(libs.androidx.multidex)
     implementation(libs.timber)
 
-    // compose navigation
+    // Compose Navigation
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.navigation.runtime.ktx)
 

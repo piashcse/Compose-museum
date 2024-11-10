@@ -19,4 +19,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "compose-museum"
-include ':app'
+include(":app")
