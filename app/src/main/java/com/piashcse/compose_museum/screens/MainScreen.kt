@@ -1,8 +1,8 @@
 package com.piashcse.compose_museum.screens
 
-import android.app.Activity
 import android.os.Build
 import androidx.activity.compose.BackHandler
+import androidx.activity.compose.LocalActivity
 import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -24,10 +24,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.piashcse.compose_museum.R
@@ -42,7 +40,7 @@ import com.piashcse.compose_museum.navigation.currentRoute
 fun MainScreen() {
     val navController = rememberNavController()
     val openDialog = remember { mutableStateOf(false) }
-    val activity = (LocalContext.current as? Activity)
+    val activity = LocalActivity.current
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
 
     BackHandler(enabled = (currentRoute(navController) == Screen.Home.route)) {
